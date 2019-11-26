@@ -1,0 +1,11 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@
+libdir=${exec_prefix}/@CMAKE_INSTALL_LIBDIR@
+
+Name: Box2D
+Description: A 2D physics engine for games
+Version: @Box2D_VERSION@
+Requires:
+Libs: -L${libdir} -lBox2D
+Cflags: -I${includedir}

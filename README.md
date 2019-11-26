@@ -57,7 +57,6 @@ Please do not submit pull requests with new features. Instead, please file an is
 - Easily switch between tests using GUI
 - Test framework for easily adding new tests
 - Mouse picking and the bomb!
-- CMake build system files
 
 ## Documentation
 You can find documentation related to the project in the [documentation page](http://box2d.org/documentation/) and in the [documentation folder](https://github.com/erincatto/Box2D/tree/master/Box2D/Documentation) in GitHub

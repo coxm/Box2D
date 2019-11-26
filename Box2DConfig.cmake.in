@@ -1,0 +1,14 @@
+# Config file for the Box2D CMake package.
+# Here we define:
+# - Box2D_INCLUDE_DIRS (Box2D include directory path);
+# - Box2D_LIBRARIES    (libraries to link against when using Box2D).
+if(NOT TARGET Box2D::Box2D)
+  get_filename_component(Box2D_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+  include("${Box2D_CMAKE_DIR}/Box2DTargets.cmake")
+endif()
+if(NOT Box2D_INCLUDE_DIRS)
+  set(Box2D_INCLUDE_DIRS "@CMAKE_INSTALL_INCLUDEDIR@")
+endif()
+if(NOT Box2D_LIBRARIES)
+  set(Box2D_LIBRARIES Box2D::Box2D)
+endif()

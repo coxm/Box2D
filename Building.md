@@ -6,6 +6,8 @@ Building the testbed is optional and may not work on your platform. I use [prema
 
 I support premake working well for [Visual Studio](https://www.visualstudio.com) on Windows 10 and [Xcode](https://developer.apple.com/xcode/) on MacOS. I appreciate contributions to get premake working on other platforms.
 
+CMake support has been added for all platforms. This is still experimental and as such, fixes and contributions are most welcome.
+
 ### Visual Studio
 Here are the steps for Visual Studio 2017:
 - Command line: `premake5 vs2017`
@@ -32,6 +34,20 @@ Here are the steps for Linux:
 
 If using Mesa, you may need to override the OpenGL version.
 - Command line: `MESA_GL_VERSION_OVERRIDE=3.3COMPAT ../Build/bin/x86_64/Debug/Testbed`
+
+### CMake (all platforms)
+Here are the steps for a simple CMake build:
+- Command line: `mkdir build`
+- Command line: `cd build`
+- Command line: `cmake ..`
+- Command line: `make`
+
+Like most projects, the CMake build is highly configurable. Here is an alternative example, creating a debug build with shared, rather than static, libraries, and without building the testbed and hello world examples.
+
+    BUILD_DIR=build/debug
+    mkdir -p "$BUILD_DIR"
+    cd "$BUILD_DIR"
+    cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Debug -DBOX2D_BUILD_TESTBED=OFF -DBOX2D_BUILD_HELLO_WORLD=OFF ../..
 
 Thanks,
 Erin
